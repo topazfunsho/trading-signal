@@ -139,6 +139,9 @@ def analyze(pair, yf_symbol):
             strength = "MEDIUM"
         else:
             strength = "WEAK"
+            
+    entry_time = datetime.now(timezone.utc).strftime("%H:%M UTC")
+
 
     if signal != "HOLD" and signal != last_signal[pair]:
         msg = (
@@ -149,7 +152,8 @@ def analyze(pair, yf_symbol):
             f"Signal: {signal}\n"
             f"Strength: {strength}\n"
             f"Timeframe: 5M\n"
-            # f"Expiry: 5 minutes"
+            f"Expiry: 5 minutes\n"
+            f"Entry Time: {entry_time}"
         )
         send_telegram(msg)
         last_signal[pair] = signal
