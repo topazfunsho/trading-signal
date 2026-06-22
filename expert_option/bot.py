@@ -14,8 +14,7 @@ CHAT_ID = os.getenv("YOUR_CHAT_ID")
 
 symbols = {
     "EURUSD": "EURUSD=X",
-    "GBPUSD": "GBPUSD=X",
-    "BTCUSD": "BTC-USD"
+    "GBPUSD": "GBPUSD=X"
 }
 
 last_signal = {s: "HOLD" for s in symbols}
